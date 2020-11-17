@@ -1,0 +1,72 @@
+package br.com.baserestfullapiauthjwt.model;
+
+import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import java.io.Serializable;
+
+@Entity
+@Table(name = "tb_photo")
+public class Photo implements Serializable {
+
+    private static final long serialVersionUID = 0L;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+
+    @NotBlank
+    @Column
+    private String title;
+
+    @NotBlank
+    @Column
+    private String url;
+
+    @NotBlank
+    @Column
+    private String thumbnailUrl;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "albumId")
+    private Album album;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+    public String getThumbnailUrl() {
+        return thumbnailUrl;
+    }
+
+    public void setThumbnailUrl(String thumbnailUrl) {
+        this.thumbnailUrl = thumbnailUrl;
+    }
+
+    public Album getAlbum() {
+        return album;
+    }
+
+    public void setAlbum(Album album) {
+        this.album = album;
+    }
+}
