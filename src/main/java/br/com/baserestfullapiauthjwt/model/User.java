@@ -40,12 +40,6 @@ public class User implements Serializable {
     @OneToMany(mappedBy = "user", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<UserRole> roles;
 
-    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private List<Address> address;
-
-    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private List<Company> company;
-
     public Integer getId() {
         return id;
     }
@@ -108,21 +102,5 @@ public class User implements Serializable {
 
     public void setRoles(List<UserRole> roles) {
         this.roles = roles;
-    }
-
-    public List<Address> getAddress() {
-        return address;
-    }
-
-    public void setAddress(List<Address> address) {
-        this.address = address;
-    }
-
-    public List<Company> getCompany() {
-        return company;
-    }
-
-    public void setCompany(List<Company> company) {
-        this.company = company;
     }
 }

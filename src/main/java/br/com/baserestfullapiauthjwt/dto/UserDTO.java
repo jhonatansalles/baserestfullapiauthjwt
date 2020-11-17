@@ -12,8 +12,6 @@ public class UserDTO {
     private String email;
     private String phone;
     private String website;
-    private List<AddressDTO> address;
-    private List<CompanyDTO> company;
     private Set<UserRoleDTO> userRole;
 
     public Integer getId() {
@@ -70,22 +68,6 @@ public class UserDTO {
 
     public void setWebsite(String website) {
         this.website = website;
-    }
-
-    public List<AddressDTO> getAddress() {
-        return address;
-    }
-
-    public void setAddress(List<AddressDTO> address) {
-        this.address = address;
-    }
-
-    public List<CompanyDTO> getCompany() {
-        return company;
-    }
-
-    public void setCompany(List<CompanyDTO> company) {
-        this.company = company;
     }
 
     public Set<UserRoleDTO> getUserRole() {
